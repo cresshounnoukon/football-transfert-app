@@ -1,0 +1,43 @@
+server:
+  port: 8080
+
+
+
+spring:
+  application:
+    name: BeninSoccerApp
+
+  banner:
+    location: banner.txt
+
+  datasource:
+
+    username: postgres
+    password: mysecretpassword
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/benin_soccer_app
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+    show-sql: true
+    database: postgresql
+    generate-ddl: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: true
+    properties:
+      hibernate:
+        format_sql: true
+
+
+#SWAGGER
+
+springdoc:
+  swagger-ui:
+    path: swagger-ui.html
+    operations-sorter: method
+
+
+
+
+
