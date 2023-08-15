@@ -1,0 +1,365 @@
+:root {
+  --primary: #4B0082FF;
+  --primary-sidemu: #f8f5fc;
+  --secondary: gray;
+  --default-color: #111;
+  --silver: #EEE;
+
+  --white: #ffffff;
+  --input-bg-color: #F4F4F4;
+  --default-padding: 10px;
+}
+
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+
+
+}
+
+
+.backoffice {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+  gap: 10px;
+
+  .side-menu {
+
+    background: var(--input-bg-color);
+
+    border-right: 1px solid var(--input-bg-color);
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+
+
+    .menu-wrapper {
+      display: flex;
+
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+
+      & ul {
+        list-style: none;
+
+      }
+
+      & ul li {
+        margin: 0;
+      }
+
+      & ul a {
+        color: var(--default-color);
+        text-decoration: none;
+        text-underline: none;
+        display: flex;
+        max-width: 100%;
+        flex-direction: row;
+        align-content: space-around;
+        align-items: center;
+        gap: var(--default-padding);
+
+        padding: var(--default-padding) 15px;
+      }
+
+      & ul li:hover {
+        background: var(--silver);
+        border-radius: 25px;
+      }
+    }
+
+  }
+
+  .content {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+
+    .content-header {
+      height: 60px;
+      background: #FFF;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--input-bg-color);
+
+
+      .menu-button {
+        & button {
+          background: transparent;
+          border: none;
+          cursor: pointer;
+        }
+
+
+      }
+
+      .logo {
+        display: flex;
+        width: 100px;
+        height: 100px;
+        border-radius: calc(var(--default-padding) * 2);
+        /*     background: var(--primary);*/
+        color: var(--primary);
+
+        align-items: center;
+        justify-content: center;
+
+
+        & span {
+          display: block;
+          font-size: calc(var(--default-padding) * 3);
+        }
+      }
+
+      .avatar {
+
+      }
+
+    }
+
+    .content-body {
+      padding: calc(var(--default-padding) * 2);
+
+      .content-body-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+
+        & h2 {
+          font-size: calc(var(--default-padding) * 4);
+        }
+
+        & p {
+          color: var(--secondary);
+        }
+      }
+
+      .content-body-detail {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+      }
+    }
+  }
+
+  .aside {
+    display: flex;
+    flex-direction: column;
+
+    width: 25%;
+    border-left: 1px solid var(--input-bg-color);
+    padding: 20px;
+
+    .search-bar {
+      width: 100%;
+      margin-bottom: 10px;
+
+      & input {
+        width: 100%;
+        border: 1px solid var(--input-bg-color);
+        padding: 10px 20px;
+        border-radius: 20px;
+        background: var(--input-bg-color);
+      }
+
+      & input:focus, & input:focus-visible {
+        border-color: var(--primary) !important;
+      }
+
+      & input:before {
+        content: "\e8b6";
+      }
+    }
+
+    .trends {
+      padding: 20px 0;
+      background: var(--input-bg-color);
+      width: 100%;
+      border-radius: 20px;
+
+      & h3 {
+        padding: 10px 20px;
+      }
+
+
+      .trend-item {
+        display: flex;
+        flex-direction: row;
+
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        padding: 10px 20px;
+
+        .trend-item-data {
+          & strong {
+            color: var(--secondary);
+            font-size: 12px;
+          }
+        }
+      }
+
+      .trend-item:hover {
+        background: var(--silver);
+
+      }
+    }
+
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  justify-content: center;
+  background: var(--white);
+  border: 1px solid var(--silver);
+  box-sizing: border-box;
+  border-radius: 20px;
+  min-width: max-content;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--default-color);
+  padding: var(--default-padding) calc(var(--default-padding) * 2);
+  gap: var(--default-padding);
+}
+
+.button-primary {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.item-header {
+  background: var(--input-bg-color);
+}
+
+
+table {
+  border: 1px solid var(--input-bg-color);
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table thead {
+  background: var(--primary);
+  color: var(--white);
+}
+
+table tr {
+  text-align: start;
+  border-bottom: 1px solid var(--input-bg-color);
+  padding: .35em;
+}
+
+table tbody tr:nth-child(even) {
+  background: var(--silver);
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: start;
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 1024px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+
+@media screen and  (max-width: 786px) {
+  .backoffice {
+    display: flex;
+    flex-direction: column;
+    .side-menu {
+      display: none;
+    }
+
+    .content{
+      width: 100% !important;
+
+    }
+    .aside{
+      width: 100% !important;
+    }
+  }
+}
+
+
+.default-padding {
+  margin: var(--default-padding);
+}

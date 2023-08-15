@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import {FrontOfficeModule} from "./front-office/front-office.module";
+import {BackOfficeRoutingModule} from "./back-office/back-office-routing.module";
+import {BackOfficeModule} from "./back-office/back-office.module";
 
 @NgModule({
   declarations: [
@@ -12,6 +15,10 @@ import { ServiceWorkerModule } from '@angular/service-worker';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FrontOfficeModule,
+    BackOfficeRoutingModule,
+    BackOfficeModule,
+
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable
